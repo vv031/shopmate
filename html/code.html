@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraftsLy - Premium Art & Craft Supplies</title>
+  <meta name="description" content="Your one-stop shop for premium art, craft, and stationery supplies at affordable prices.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar py-1 d-none d-md-block">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0"><i class="bi bi-star-fill me-2"></i>Your Favorite Online Art & Crafts Shop</p>
+        <p class="mb-0"><i class="bi bi-truck me-2"></i>FREE SHIPPING ON ORDERS ABOVE ₹499</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Top Bar -->
+  <div class="top-bar py-1 d-md-none">
+    <div class="container text-center">
+      <p class="mb-0 small"><i class="bi bi-truck me-2"></i>FREE SHIPPING ABOVE ₹499</p>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header sticky-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="logo-link">
+          <img src="images/" alt="Logo" class="logo">
+        </a>
+        
+        <div class="flex-grow-1 mx-lg-3 mx-0 position-relative">
+          <div class="search-container">
+            <input type="text" placeholder="Search Products..." class="search-box" id="searchInput" aria-label="Search products">
+            <button class="search-btn"><i class="bi bi-search"></i></button>
+            <div class="search-suggestions" id="searchSuggestions"></div>
+          </div>
+        </div>
+        
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="btn position-relative" id="cartBtn" aria-label="Shopping cart">
+            <i class="bi bi-bag"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" id="cartCount">
+              0
+            </span>
+          </button>
+
+          <button type="button" class="btn d-none d-md-block" id="userBtn" aria-label="User account">
+            <i class="bi bi-person"></i>
+          </button>
+
+          <button class="navbar-toggler d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-white py-2">
+    <div class="container position-relative">
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav me-auto">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Architech & Design
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Drawing Boards</a></li>
+              <li><a class="dropdown-item" href="#">Scales & Rules</a></li>
+              <li><a class="dropdown-item" href="#">Drafting Tools</a></li>
+              <li><a class="dropdown-item" href="#">Templates</a></li>
+              <li><a class="dropdown-item" href="#">Architectural Supplies</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Art & Craft
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Paints & Brushes</a></li>
+              <li><a class="dropdown-item" href="#">Sketching</a></li>
+              <li><a class="dropdown-item" href="#">Clay & Modeling</a></li>
+              <li><a class="dropdown-item" href="#">Fabric Crafts</a></li>
+              <li><a class="dropdown-item" href="#">Kids Crafts</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Art Books & Paper
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sketchbooks</a></li>
+              <li><a class="dropdown-item" href="#">Watercolor Paper</a></li>
+              <li><a class="dropdown-item" href="#">Drawing Paper</a></li>
+              <li><a class="dropdown-item" href="#">Specialty Paper</a></li>
+              <li><a class="dropdown-item" href="#">Notebooks</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Computer Accessories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mouse & Keyboards</a></li>
+              <li><a class="dropdown-item" href="#">USB Drives</a></li>
+              <li><a class="dropdown-item" href="#">Cables & Adapters</a></li>
+              <li><a class="dropdown-item" href="#">Laptop Stands</a></li>
+              <li><a class="dropdown-item" href="#">Webcams</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Display Board & Stands
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Poster Boards</a></li>
+              <li><a class="dropdown-item" href="#">Foam Boards</a></li>
+              <li><a class="dropdown-item" href="#">Easels</a></li>
+              <li><a class="dropdown-item" href="#">Display Cases</a></li>
+              <li><a class="dropdown-item" href="#">Mounting Supplies</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Stationery
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Pens & Pencils</a></li>
+              <li><a class="dropdown-item" href="#">Notebooks</a></li>
+              <li><a class="dropdown-item" href="#">Folders & Files</a></li>
+              <li><a class="dropdown-item" href="#">Staplers & Punches</a></li>
+              <li><a class="dropdown-item" href="#">Desk Organizers</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <button class="top-deals-btn btn btn-danger d-none d-lg-block">Top Deals <i class="bi bi-lightning-charge-fill"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content row align-items-center">
+        <!-- Left image -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="hero-img">
+            <img src="images/hero-left.png" alt="Art Supplies" class="img-fluid">
+          </div>
+        </div>
+        
+        <!-- Text content -->
+        <div class="col-lg-4 col-12 text-center">
+          <div class="hero-text my-4 my-lg-0">
+            <h1>The Stationery shop<br><span>for all</span></h1>
+            <p class="lead text-white mb-4">Premium quality art & craft supplies for professionals and hobbyists</p>
+            <button class="btn btn-light btn-lg">Shop Now <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+        
+        <!-- Right image -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="hero-img">
+            <img src="images/hero-right.png" alt="Canvas & Easel" class="img-fluid circular-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories py-5">
+    <div class="container">
+      <div class="row g-3 justify-content-center align-items-stretch">
+        <!-- Column 1: Art Books -->
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="cat-item w-100">
+            <img src="images/cat1.png" alt="Art Books" class="img-fluid h-100 object-fit-cover">
+            <span>ART BOOKS & PAPER</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Heading Text -->
+        <div class="col-lg-4 col-md-6 d-flex align-items-center text-center">
+          <div class="section-title w-100">
+            <p class="text-uppercase text-muted small">Top Categories</p>
+            <h2 class="fw-bold mb-3">Elevate Your Workspace</h2>
+            <h3 class="highlight-title">With Our Stationery</h3>
+          </div>
+        </div>
+
+        <!-- Column 3: Architech & Design -->
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="cat-item w-100">
+            <img src="images/cat3.png" alt="Architecture" class="img-fluid h-100 object-fit-cover">
+            <span>ARCHITECH & DESIGN</span>
+          </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="cat-item w-100">
+            <img src="images/cat2.png" alt="Art & Craft" class="img-fluid h-100">
+            <span>ART & CRAFT</span>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="cat-item w-100">
+            <img src="images/cat4.png" alt="Paper & Chart" class="img-fluid h-100">
+            <span>PAPER & CHART</span>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="cat-item w-100">
+            <img src="images/cat5.png" alt="Computer Accessories" class="img-fluid h-100">
+            <span>COMPUTER ACCESSORIES</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products py-5 bg-light">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+        <h2 class="mb-3 mb-md-0">Featured Products</h2>
+        <a href="#" class="btn btn-outline-primary">View All</a>
+      </div>
+      
+      <div class="row g-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+          <div class="product-card">
+            <div class="product-badge bg-danger">Sale</div>
+            <div class="product-img">
+              <img src="images/fp1.png" alt="Premium Sketchbook" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Premium Sketchbook</h3>
+              <div class="rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                <span class="ms-1">(24)</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="text-danger fw-bold">₹199</span>
+                  <span class="text-decoration-line-through text-muted small ms-2">₹299</span>
+                </div>
+                <button class="btn btn-sm btn-outline-primary">Add <i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+          <div class="product-card">
+            <div class="product-badge bg-success">New</div>
+            <div class="product-img">
+              <img src="images/fp2.png" alt="Artist Brush Set" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Artist Brush Set</h3>
+              <div class="rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star text-warning"></i>
+                <span class="ms-1">(18)</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-danger fw-bold">₹349</span>
+                <button class="btn btn-sm btn-outline-primary">Add <i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/fp3.png" alt="Drafting Scale Set" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Drafting Scale Set</h3>
+              <div class="rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <span class="ms-1">(42)</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-danger fw-bold">₹149</span>
+                <button class="btn btn-sm btn-outline-primary">Add <i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+          <div class="product-card">
+            <div class="product-badge bg-info">Best Seller</div>
+            <div class="product-img">
+              <img src="images/fp4.png" alt="Watercolor Paint Set" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Watercolor Paint Set</h3>
+              <div class="rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                <span class="ms-1">(36)</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-danger fw-bold">₹499</span>
+                <button class="btn btn-sm btn-outline-primary">Add <i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Budget Shop Section -->
+  <section class="budget-shop py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <p class="text-uppercase small">Top Offers</p>
+        <h2 class="shop-heading mb-2">SHOP BY BUDGET!</h2>
+      </div>
+
+      <div class="row g-3 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="budget-item" style="background-image: url('images/pu1.png');">
+            <p>Products Under<br><strong>99</strong></p>
+            <button class="btn btn-outline-dark">Shop Now</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="budget-item" style="background-image: url('images/pu2.png');">
+            <p>Products Under<br><strong>199</strong></p>
+            <button class="btn btn-outline-dark">Shop Now</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="budget-item" style="background-image: url('images/pu3.png');">
+            <p>Products Under<br><strong>299</strong></p>
+            <button class="btn btn-outline-dark">Shop Now</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="budget-item" style="background-image: url('images/pu4.png');">
+            <p>Products Under<br><strong>399</strong></p>
+            <button class="btn btn-outline-dark">Shop Now</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mx-auto">
+          <div class="budget-item" style="background-image: url('images/pu5.png');">
+            <p>Products Under<br><strong>499</strong></p>
+            <button class="btn btn-outline-dark">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">What Our Customers Say</h2>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="rating mb-3">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+            </div>
+            <p class="mb-4">"The quality of art supplies is exceptional. My watercolor paintings have improved significantly since I started using CraftsLy products."</p>
+            <div class="d-flex align-items-center">
+              <img src="images/pp1.png" alt="Ananya Sharma" class="rounded-circle me-3" width="50">
+              <div>
+                <h6 class="mb-0">Ananya Sharma</h6>
+                <small class="text-muted">Professional Artist</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="rating mb-3">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-half text-warning"></i>
+            </div>
+            <p class="mb-4">"Fast delivery and excellent customer service. The drafting tools I ordered were exactly what I needed for my architecture projects."</p>
+            <div class="d-flex align-items-center">
+              <img src="images/pp1.png" alt="Rahul Verma" class="rounded-circle me-3" width="50">
+              <div>
+                <h6 class="mb-0">Rahul Verma</h6>
+                <small class="text-muted">Architecture Student</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="rating mb-3">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+            </div>
+            <p class="mb-4">"My kids love the craft supplies from CraftsLy. The quality is great and the prices are very reasonable compared to other stores."</p>
+            <div class="d-flex align-items-center">
+              <img src="images/pp1.png" alt="Priya Patel" class="rounded-circle me-3" width="50">
+              <div>
+                <h6 class="mb-0">Priya Patel</h6>
+                <small class="text-muted">Parent & Teacher</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Brands Section -->
+  <section class="top-brands py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column: Text -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="section-title mb-4">
+            <p class="text-uppercase text-muted small">Top Brands</p>
+            <h2 class="fw-bold position-relative">
+              <span class="brand-highlight">Most Popular Brands</span>
+            </h2>
+            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Brand Grid -->
+        <div class="col-lg-8">
+          <div class="row g-3">
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand1.png" alt="Brand 1" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand2.png" alt="Brand 2" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand3.png" alt="Brand 3" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand4.png" alt="Brand 4" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand5.png" alt="Brand 5" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand6.png" alt="Brand 6" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand7.png" alt="Brand 7" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="brand-card text-center p-3">
+                <img src="images/brand8.png" alt="Brand 8" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark text-light">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- About Us -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold">About Us</h6>
+          <p>Welcome To shop, Your Premier Destination For All Your Stationery, Art, Craft, And Office Supply Needs.</p>
+          <p><i class="bi bi-envelope me-2"></i>vivekvardhan031@gmail.com</p>
+          <p><i class="bi bi-telephone me-2"></i>+91 8330984389</p>
+          <h6 class="fw-bold mt-4">Payment Via</h6>
+          <div class="d-flex flex-wrap gap-1 mt-2">
+            <img src="images/visa.png" height="20" alt="Visa">
+            <img src="images/mastercard.png" height="20" alt="MasterCard">
+            <img src="images/paypal.png" height="20" alt="PayPal">
+            <img src="images/paytm.png" height="20" alt="Paytm">
+            <img src="images/phonepe.png" height="20" alt="PhonePe">
+            <img src="images/upi.png" height="20" alt="UPI">
+            <img src="images/amazon.png" height="20" alt="Amazon">
+          </div>
+        </div>
+
+        <!-- Get in Touch -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold">Get in touch with us</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-light">About Us</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Contact Us</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Terms And Conditions</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Privacy Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-light">FAQs</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Ship And Delivery Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Refund And Cancellation Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold">Quick links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-light">Home</a></li>
+            <li><a href="#" class="text-decoration-none text-light">Category</a></li>
+          </ul>
+          <h6 class="fw-bold mt-4">Mobile App</h6>
+          <a href="#"><img src="images/gp.png" alt="Google Play" height="50"></a>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold">Subscribe our newsletter</h6>
+          <p>Welcome To shop, Your Premier Destination For All Your Stationery, Art, Craft, And Office Supply Needs.</p>
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="form-control rounded-start-pill" placeholder="enter email" required>
+              <button class="btn btn-pink rounded-end-pill px-4" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="text-center pt-4 mt-5 border-top border-secondary">
+        <p class="mb-0 small">Copyright Reserved © – 2024 |
+          Developed by Tessrac | Managed by Craftsly
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Your Shopping Cart (<span id="cartItemCount">0</span> items)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="empty-cart text-center py-5" id="emptyCart">
+            <i class="bi bi-cart-x display-4 text-muted mb-3"></i>
+            <h5>Your cart is empty</h5>
+            <p class="text-muted">Start shopping to add items to your cart</p>
+            <button class="btn btn-primary" data-bs-dismiss="modal">Continue Shopping</button>
+          </div>
+          
+          <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+          <div class="text-end">
+            <h5 class="mb-3">Total: <span id="cartTotal">₹0</span></h5>
+            <button class="btn btn-danger">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+          <!-- In the login modal -->
+          <div class="text-center mt-3">
+           <p class="mb-1">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
+           <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Create an Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label for="registerName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="registerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="registerPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="registerConfirmPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+        <div class="text-center mt-3">
+          <p class="mb-1">Already have an account? <a href="#" data-modal-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="forgotPasswordModalLabel">Reset Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="forgotPasswordForm">
+          <div class="mb-3">
+            <label for="forgotEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="forgotEmail" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
+        </form>
+        <div class="text-center mt-3">
+          <p class="mb-1">Remember your password? <a href="#" data-modal-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="btn btn-primary rounded-circle shadow" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/javascript.js"></script>
+</body>
+</html>
